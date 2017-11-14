@@ -18,6 +18,7 @@
             if (this.rollSide == string.Empty)
             {
                 Console.WriteLine("Error: invalid command parameters");
+                return input;
             }
             else if(this.rollSide == "left")
             {
@@ -25,9 +26,13 @@
             }
             else if (this.rollSide == "right")
             {
-
+                var lastItemIndex = input.Count - 1;
+                var itemToRoll = input[lastItemIndex];
+                input.RemoveAt(lastItemIndex);
+                input.Insert(0, itemToRoll);
             }
 
+            Console.WriteLine(String.Join(" ", input));
             return input;
         }
     }

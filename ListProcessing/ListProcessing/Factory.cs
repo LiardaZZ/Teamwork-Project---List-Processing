@@ -32,7 +32,7 @@
                     return new SortCommand();
                 case "roll":
                     string rollSide = string.Empty;
-                    if (commandArgs.Count != 1)
+                    if (commandArgs.Count == 2)
                     {
                         rollSide = commandArgs[1];
                     }
