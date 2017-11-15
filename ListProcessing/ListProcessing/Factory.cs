@@ -39,6 +39,8 @@
                     return new RollCommand(rollSide);
                 case "count":
                     return new CountCommand();
+                case "end":
+                    return new EndCommand();
                 default:
                     return null;
             }

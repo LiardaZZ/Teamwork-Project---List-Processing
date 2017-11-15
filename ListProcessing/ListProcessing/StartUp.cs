@@ -15,7 +15,7 @@
 
             var factory = new Factory(); 
 
-            while (commandArgs[0] != "end")
+            while (true)
             {
                 var command = factory.CreateCommand(commandArgs);
 
@@ -28,9 +28,14 @@
                    input = command.Execute(input, commandArgs);
                 }
                 commandArgs = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries).ToList();
-            }
 
-            Console.WriteLine("Finished");
+                if (commandArgs[0] == "end" && commandArgs.Count == 1)
+                {
+                    command = factory.CreateCommand(commandArgs);
+                    command.Execute(input, commandArgs);
+                    break;
+                }
+            }
         }
     }
 }
