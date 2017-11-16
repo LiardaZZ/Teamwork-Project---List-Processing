@@ -8,6 +8,16 @@
     {
         public List<string> Execute(List<string> input, IList<string> commandArgs)
         {
+            if (commandArgs.Count != 1)
+            {
+                Console.WriteLine("Error: invalid command parameters");
+                return input;
+            }
+
+            input.Reverse();
+
+            Console.WriteLine(String.Join(" ", input));
+
             return input;
         }
     }
