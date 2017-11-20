@@ -20,9 +20,12 @@
                 Console.WriteLine("Error: invalid command parameters");
                 return input;
             }
-            else if(this.rollSide == "left")
+            else if (this.rollSide == "left")
             {
-
+                var firstItemIndex = 0;
+                var itemToRoll = input[firstItemIndex];
+                input.RemoveAt(firstItemIndex);
+                input.Insert(input.Count, itemToRoll);
             }
             else if (this.rollSide == "right")
             {
