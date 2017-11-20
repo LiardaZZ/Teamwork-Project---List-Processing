@@ -8,14 +8,15 @@
     {
         public List<string> Execute(List<string> input, IList<string> commandArgs)
         {
-            if (commandArgs.Count != 3)
+            var isIndexArgANumber = int.TryParse(commandArgs[1], out int index);
+
+            if (commandArgs.Count != 3 || !isIndexArgANumber)
             {
                 Console.WriteLine("Error: invalid command parameters");
                 return input;
             }
-            var isIndexArgANumber = int.TryParse(commandArgs[1], out int index);
-            if (!isIndexArgANumber ||
-                !(0 <= index && index <= input.Count)) 
+            
+            if (!(0 <= index && index <= input.Count - 1)) 
             {
                 var currentIndex = commandArgs[1];
                 Console.WriteLine($"Error: invalid index {currentIndex}");

@@ -8,8 +8,7 @@
     {
         public List<string> Execute(List<string> input, IList<string> commandArgs)
         {
-            int index;
-            var isInteger = int.TryParse(commandArgs[1], out index);
+            var isInteger = int.TryParse(commandArgs[1], out int index);
 
             if (commandArgs.Count != 2 || !isInteger)
             {
