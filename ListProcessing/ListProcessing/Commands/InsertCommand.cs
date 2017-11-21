@@ -16,7 +16,7 @@
                 return input;
             }
             
-            if (!(0 <= index && index <= input.Count - 1)) 
+            if (!(0 <= index && index < input.Count - 1)) 
             {
                 var currentIndex = commandArgs[1];
                 Console.WriteLine($"Error: invalid index {currentIndex}");
